@@ -1,0 +1,33 @@
+[project]
+name = "alpes-bank"
+authors = [{name = "NekoSoft", email = "na.mora@uniandes.edu.co"}]
+version = "0.1.0"
+requires-python = ">=3.9"
+dependencies = [
+  "pydantic==1.10.8",
+  "fastapi==0.95.2",
+  "alembic~=1.10",
+  "sqlalchemy~=1.4",
+  "psycopg2-binary",
+  "python-dotenv",
+  "PyJWT",
+  "passlib",
+  "bcrypt",
+  "wheel",
+  "uvicorn[standard]",
+  "sentry_sdk==1.26.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "ruff"
+]
+
+# black configuration
+[tool.black]
+preview = true
+
+# ruff configuration
+[tool.ruff]
+extend-select = ["I"]
