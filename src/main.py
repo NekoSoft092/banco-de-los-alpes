@@ -1,9 +1,14 @@
-import uvicorn
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+import os
 from dotenv import load_dotenv
-
 load_dotenv()
+
+import uvicorn
+from fastapi import FastAPI, Depends, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+
+from database import engine, get_db
+from sqlalchemy.orm import Session
+
 
 app_version: str = 'v1'
 app_prefix: str = '/api/'+app_version+'/es'
@@ -45,7 +50,11 @@ async def check_status():
 async def home():
     return {"message": "Hello World!!! "}
 
+@app.get("/test-db", status_code=200)
+async def test_database(db: Session= Depends(get_db)):
+    return {"message": "server is connected"}
+
 # Run uvicorn script  
 if __name__ == '__main__':
-    port_env: int= int(7878)
+    port_env: int= int( os.getenv('PORT'))
     uvicorn.run("main:app", port=port_env, reload=True)
