@@ -6,9 +6,10 @@ from sqlalchemy import pool
 from alembic import context
 
 from database import Base
-# from schemas.user_schema import UserSchema
+from schemas.user_schema import UserSchema
 # from schemas.session_auth_schema import SessionAuthSchema
 # from schemas.code_schema import CodeSchema
+from schemas.card_schema import CardSchema
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

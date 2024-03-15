@@ -6,12 +6,16 @@ import uvicorn
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from database import engine, get_db
+from database import  get_db
 from sqlalchemy.orm import Session
 
+from routes.auth_route import router as router_auth
+from routes.card_routes import router as router_cards
 
-app_version: str = 'v1'
-app_prefix: str = '/api/'+app_version+'/es'
+routers = [
+    router_auth,
+    router_cards
+]
 
 app: FastAPI = FastAPI(
     title='alpes-bank', 
@@ -39,6 +43,12 @@ app.add_middleware(
     allow_methods=["GET", "PUT", "POST", "DELETE", "OPTIONS", "PATCH"],
     allow_headers=["*"],
 )
+
+# routes
+for router in routers:
+    app.include_router(router)
+
+
 
 # Application health  
 @app.get("/status")
