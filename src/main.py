@@ -56,5 +56,5 @@ async def test_database(db: Session= Depends(get_db)):
 
 # Run uvicorn script  
 if __name__ == '__main__':
-    port_env: int= int( os.getenv('PORT'))
+    port_env: int = int( os.getenv('PORT'))
     uvicorn.run("main:app", port=port_env, reload=True)
