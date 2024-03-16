@@ -11,10 +11,12 @@ from sqlalchemy.orm import Session
 
 from routes.auth_route import router as router_auth
 from routes.card_routes import router as router_cards
+from routes.request_routes import router as router_request
 
 routers = [
     router_auth,
-    router_cards
+    router_cards,
+    router_request
 ]
 
 app: FastAPI = FastAPI(

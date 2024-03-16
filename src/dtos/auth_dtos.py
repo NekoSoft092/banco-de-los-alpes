@@ -13,8 +13,10 @@ class UserRegisterRequestDTO(BaseModel):
     profesion: str
     credit_score: Optional[int]
     es_cliente: bool
+    ingresos: int
 
 
 
 class UserRegisterResponseDTO(BaseModel):
     nombre: str
+    id: str

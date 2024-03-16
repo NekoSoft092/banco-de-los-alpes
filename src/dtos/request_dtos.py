@@ -17,7 +17,5 @@ class Step1ResponseDTO(BaseModel):
     expiration_date: datetime
     step: int
 
-# step 2
-class Step2RequestDTO(BaseModel):
-    thing: any
+
 
