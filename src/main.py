@@ -6,7 +6,7 @@ import uvicorn
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from database import  get_db
+from database import get_db
 from sqlalchemy.orm import Session
 
 from routes.auth_route import router as router_auth

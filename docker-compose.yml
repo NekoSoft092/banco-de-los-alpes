@@ -1,13 +1,13 @@
-version: '3.8'
+version: "3.8"
 services:
-  db:
-    image: postgres:13
-    container_name: alpes_postgres_db
-    environment:
-      POSTGRES_DB: alpes_bank_db
-      POSTGRES_USER: alpes_user
-      POSTGRES_PASSWORD: alpes_password
-    ports:
-      - "5432:5432"
-    volumes:
-      - ./data:/var/lib/postgresql/data
+    db:
+        image: postgres:13-alpine
+        container_name: alpes_postgres_db
+        environment:
+            POSTGRES_DB: alpes_bank_db
+            POSTGRES_USER: alpes_user
+            POSTGRES_PASSWORD: alpes_password
+        ports:
+            - "5432:5432"
+        # volumes:
+        # - ./data:/var/lib/postgresql/data
