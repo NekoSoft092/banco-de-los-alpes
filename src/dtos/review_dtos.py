@@ -4,12 +4,13 @@ from datetime import datetime
 
 # register
 class ReviewRegisterRequestDTO(BaseModel):
-    email_adviser: str
+    
+    id_request: str
     title: str
     annotations: Optional[str]
 
 class ReviewRegisterResponseDTO(BaseModel):
-    email_adviser: str
+    id_request: str
     title: str
     annotation: Optional[str]
     created_at: datetime
