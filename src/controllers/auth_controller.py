@@ -4,7 +4,8 @@ from sqlalchemy.orm import Session
 
 def registerUserController(data: UserRegisterRequestDTO, db: Session):
     rp = UserRepository()
-    rp.save(db, data)
+    user_id: str = rp.save(db, data)
     return UserRegisterResponseDTO(
-        nombre=data.nombres
+        nombre=data.nombres, 
+        id = user_id
     )

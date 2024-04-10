@@ -20,3 +20,4 @@ class UserSchema(Base):
     profession = Column(String, nullable = True)
     credit_score = Column(Integer, nullable = True)
     is_client = Column(Boolean, nullable = False)
+    ingresos = Column(Integer, nullable = True) # refactor here

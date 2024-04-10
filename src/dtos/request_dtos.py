@@ -7,6 +7,7 @@ class Step1RequestDTO(BaseModel):
     apellidos: str
     ciudad: str
     numero_celular: str
+    indicativo: str
     email: str
 
 class Step1ResponseDTO(BaseModel):
@@ -16,7 +17,5 @@ class Step1ResponseDTO(BaseModel):
     expiration_date: datetime
     step: int
 
-# step 2
-class Step2RequestDTO(BaseModel):
-    thing: any
+
 
