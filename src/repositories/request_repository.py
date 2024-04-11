@@ -1,7 +1,8 @@
 from sqlalchemy import insert
 from schemas.request_schema import RequestSchema
 from dtos.request_dtos import Step1RequestDTO
-from sqlalchemy import Session
+from sqlalchemy.orm import Session
+from sqlalchemy.exc import SQLAlchemyError 
 
 class RequestRepository:
 
@@ -23,3 +24,11 @@ class RequestRepository:
             db.commit()
         else:
             print('not session provided')
+
+    @staticmethod
+    def find_by_id(db: Session, request_id: int) -> RequestSchema:
+        try:
+            return db.query(RequestSchema).filter(RequestSchema.id == request_id).first()
+        except SQLAlchemyError as e:
+            print(f"An error occurred while fetching request: {str(e)}")
+            return None

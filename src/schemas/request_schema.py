@@ -7,9 +7,10 @@ from sqlalchemy.dialects.postgresql import UUID
 from schemas.card_schema import CardSchema
 from schemas.user_schema import UserSchema
 
-class RequesSchema(Base):
+class RequestSchema(Base):
     __tablename__ = 'requests'
 
+    id = Column(UUID, primary_key=True, nullable=False)
     status = Column(String, nullable = False)
     creation_date = Column(Date, nullable = False)
     last_modification = Column(Date, nullable = False)
