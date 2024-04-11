@@ -30,3 +30,4 @@ def registrerRequestController(data: Step1RequestDTO, db, Session):
     return Step1ResponseDTO(
         state=data.state
     )
+    
