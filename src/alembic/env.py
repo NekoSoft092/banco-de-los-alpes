@@ -10,6 +10,7 @@ from schemas.user_schema import UserSchema
 # from schemas.session_auth_schema import SessionAuthSchema
 # from schemas.code_schema import CodeSchema
 from schemas.card_schema import CardSchema
+from schemas.revision_schema import RevisionSchema
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
