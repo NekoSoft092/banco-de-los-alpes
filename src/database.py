@@ -7,11 +7,11 @@ from utils.logs import printLog
 from dotenv import load_dotenv
 load_dotenv()
 
-database_user: str | None = os.getenv('POSTGRESQL_USER')
-database_host: str | None = os.getenv('POSTGRESQL_HOST')
-database_port: str | None = os.getenv('POSTGRESQL_PORT')
-database_password: str | None = os.getenv('POSTGRESQL_PASSWORD')
-database_name: str | None = os.getenv('DATABASE_NAME')
+database_user = os.getenv('POSTGRESQL_USER')
+database_host = os.getenv('POSTGRESQL_HOST')
+database_port = os.getenv('POSTGRESQL_PORT')
+database_password = os.getenv('POSTGRESQL_PASSWORD')
+database_name = os.getenv('DATABASE_NAME')
 
 SQLALCHEMY_DATABASE_URL = ''
 

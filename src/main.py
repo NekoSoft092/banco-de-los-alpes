@@ -43,8 +43,6 @@ app.add_middleware(
 for router in routers:
     app.include_router(router)
 
-
-
 # Application health  
 @app.get("/status")
 async def check_status():
