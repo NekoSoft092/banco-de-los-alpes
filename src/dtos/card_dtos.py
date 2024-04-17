@@ -6,6 +6,7 @@ class CardRegisterRequestDTO(BaseModel):
     user_id: str
     amount: float
     current: str
+    suggested: bool
 
 class CardRegisterResponseDTO(BaseModel):
     number: str

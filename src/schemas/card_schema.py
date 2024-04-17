@@ -17,5 +17,5 @@ class CardSchema(Base):
     amount = Column(Float, nullable = False)
     current = Column(String, nullable = False)
 
-    user_id = Column(UUID, ForeignKey(UserSchema.id, ondelete='CASCADE'), nullable=True, unique=True)
+    user_id = Column(UUID, ForeignKey(UserSchema.id, ondelete='CASCADE'), nullable=False, unique=True)
     user = relationship('UserSchema', backref='card')

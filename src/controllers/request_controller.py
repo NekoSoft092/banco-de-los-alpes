@@ -5,13 +5,11 @@ from repositories.request_repository import RequestRepository
 
 from datetime import datetime, timedelta
 
-def requestController(data: Step1RequestDTO, db: Session) -> Step1ResponseDTO:
+def step1Controller(data: Step1RequestDTO, db: Session) -> Step1ResponseDTO:
   
   # crear usuarui
   #rp = UserRepository()
   # rp.save(db, data)
-  
-  # crear reque
 
 
   return Step1ResponseDTO(
@@ -21,7 +19,6 @@ def requestController(data: Step1RequestDTO, db: Session) -> Step1ResponseDTO:
     expiration_date=datetime.now() +  timedelta(days=30), 
     step=1
   )
-
 
 
 def registrerRequestController(data: Step1RequestDTO, db, Session):
