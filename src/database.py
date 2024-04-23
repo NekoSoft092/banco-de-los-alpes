@@ -13,7 +13,7 @@ database_port = os.getenv('POSTGRESQL_PORT')
 database_password = os.getenv('POSTGRESQL_PASSWORD')
 database_name = os.getenv('DATABASE_NAME')
 
-SQLALCHEMY_DATABASE_URL = 'postgresql://{database_user}:{database_password}@{database_host}:{database_port}/{database_name}'
+SQLALCHEMY_DATABASE_URL = ''
 
 if database_host != None and database_name != None and database_password != None and database_user != None and database_port != None:
     SQLALCHEMY_DATABASE_URL = f'postgresql://{database_user}:{database_password}@{database_host}:{database_port}/{database_name}'
