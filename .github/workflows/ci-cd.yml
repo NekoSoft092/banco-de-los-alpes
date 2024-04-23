@@ -22,7 +22,8 @@ jobs:
       run: docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/fastapi-app:${{ github.sha }} .
 
     - name: Push Docker image
-      run: docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/fastapi-app:${{ github.sha }}
+      run: docker push us-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/fastapi-app:${{ github.sha}}
+
 
     - name: Deploy to Kubernetes
       run: |
